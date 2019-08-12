@@ -85,32 +85,28 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-
-# boost
-export DYLD_LIBRARY_PATH=/usr/local/boost_1_64_0/lib
-export LIBS="-L/usr/local/boost_1_64_0/stage/lib"
-export CPPFLAGS="-I/usr/local/boost_1_64_0"
-export BOOST_ROOT=/usr/local/boost_1_64_0
-export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/lib:/usr/local
-
-# pythonn
-export PATH=$PATH:/usr/local/lib/python3.6/site-packages
+# python
+if [[ $(uname) == "Darwin" ]];
+then
+  export PATH=$PATH:/usr/local/lib/python3.7/site-packages
+fi
 export PYTHONSTARTUP=$HOME/.pythonrc
 alias python=python3
 
 # staff
 export VISUAL=vim
 export LC_CTYPE='en_US.UTF-8'
-alias ya=~/arcadia/ya
-# alias vim="ya vim"
-alias ymake="ya make -r"
-export YT_PROXY=hahn
-export YA_BS_PROJECT=direct
+
+if [[ ! $(uname) == "Darwin" ]];
+then 
+  alias ya=~/arcadia/ya
+  alias vim="ya vim"
+  alias ymake="ya make -r"
+  export YT_PROXY=hahn
+  export YA_BS_PROJECT=direct
+fi
 
 prompt_context() {}
 prompt_dir() {
   prompt_segment blue black '%2~'
 }
-
-# source $HOME/.yql/shell_completion
