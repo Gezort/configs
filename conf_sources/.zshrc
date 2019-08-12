@@ -51,8 +51,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux zsh-autosuggestions capistrano bundler heroku rake rvm autojump
-    command-not-found python pip github gnu-utils history-substring-search zsh-syntax-highlighting)
+plugins=(git archlinux zsh-autosuggestions capistrano bundler heroku rake rvm
+    command-not-found python pip github gnu-utils history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
