@@ -1,10 +1,8 @@
-#!/bin/bash
-
 red_col=`tput setaf 1`
 green_col=`tput setaf 2`
 reset_col=`tput sgr0`
 
-if [[ $(uname) == "Linux" ]];
+if test $(uname) = "Linux";
 then
     if ! apt-cache policy zsh | grep zsh > /dev/null;
     then 
