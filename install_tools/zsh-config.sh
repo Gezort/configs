@@ -14,6 +14,7 @@ git clone git://github.com/wting/autojump.git ~/autojump
 cd ~/autojump && ./install.py
 cd && rm -rf ~/autojump
 
+rm -rf ~/.oh-my-zsh
 env CHSH='no' RUNZSH='no' sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
