@@ -4,8 +4,9 @@ reset_col=`tput sgr0`
 
 if test $(uname) = "Linux";
 then
-    if ! apt-cache policy zsh | grep zsh > /dev/null;
-    then 
+    dpkg -s zsh &> /dev/null
+    if [ $? -ne 0 ]; 
+    then
         echo "${green_col}@@@ installing zsh @@@${reset_col}" && sudo apt-get update && sudo apt-get install -y zsh || exit 1;
     fi
 fi
