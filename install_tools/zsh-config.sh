@@ -6,7 +6,7 @@ if test $(uname) = "Linux";
 then
     if ! apt-cache policy zsh | grep zsh > /dev/null;
     then 
-        echo "${green_col}@@@ installing zsh @@@${reset_col}" && sudo apt-get update && sudo apt-get install -y zsh;
+        echo "${green_col}@@@ installing zsh @@@${reset_col}" && sudo apt-get update && sudo apt-get install -y zsh || exit 1;
     fi
 fi
 
